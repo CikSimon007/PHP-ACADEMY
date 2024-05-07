@@ -93,6 +93,21 @@ for ($x = 0; $x <= 10; $x++) {
   echo "The number is: $x <br>";
 }
 
+function myMessage() {
+  echo "Hello world!";
+}
+
+myMessage();
+
+//polia
+$cars = array("Volvo", "BMW", "Toyota");
+$car = array("brand"=>"Ford", "model"=>"Mustang", "year"=>1964);
+
+$cars = [];
+$cars[0] = "Volvo";
+$cars[1] = "BMW";
+$cars[2] = "Toyota";
+
 
 
 

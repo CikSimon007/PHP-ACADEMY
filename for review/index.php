@@ -9,11 +9,10 @@
 <?php
 //lvl1
 
-echo 'ahoj';
+echo 'ahoj <br>';
 date_default_timezone_set('Europe/Bratislava');
 $currentDateTime = date('Y-m-d H:i:s');
-echo "Aktuálny dátum a čas: $currentDateTime";
-
+echo "Aktuálny dátum a čas: $currentDateTime <br><br>";
 
 $date_time = date("Y-m-d H:i:s");
 $file = "log.txt";
@@ -23,10 +22,9 @@ file_put_contents($file, $date_time . PHP_EOL, FILE_APPEND);
 function getLogs() {
     $file = "log.txt";
     $log_content = file_get_contents($file);
-    return $log_content;
+    return nl2br($log_content); // Using nl2br to convert newlines to <br> tags for HTML output
 }
-echo getLogs();
-
+echo getLogs() . "<br>";
 
 $current_time = date("H:i"); //cas vo formate hodina minuta
 if ($current_time > "08:00") {  //ak je aktualny cas viac ako 8
@@ -50,8 +48,6 @@ if ($current_hour >= 20 && $current_hour <= 24) {    //ak sme v rozmedzi 20 az 2
     $meskanie = "";
     logArrival($meskanie);
 }
-
-
 ?>
 </body>
 </html>
